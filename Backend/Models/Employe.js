@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('./User');
 
-const employeSchema = mongoose.Schema({
+const employeSchema = new mongoose.Schema({
 
     f_Name:{
         type:String,
@@ -56,10 +56,13 @@ const employeSchema = mongoose.Schema({
 
 User.pre('remove',async function (next) {
     try {
-        
+        await Emp.deleteMany({employeeId: this._id});
+        next()
     } catch (error) {
-        
+        next(error)
     }
 })
 
-const Emp = mongoose.model('t_Employe',employeSchema)
+const Emp = mongoose.model('t_Employe',employeSchema);
+
+module.exports = Emp;
