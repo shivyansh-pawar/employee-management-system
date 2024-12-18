@@ -50,7 +50,7 @@ const edituser = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message:"uer update successfully",updateUser
+            message:"user update successfully",updateUser
         })
     } catch (error) {
         
