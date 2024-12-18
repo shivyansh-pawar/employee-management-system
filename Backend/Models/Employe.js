@@ -25,11 +25,11 @@ const employeSchema = new mongoose.Schema({
           },
     },
     f_Designation:{
-        type:true,
+        type:String,
         required:true
     },
     f_gender:{
-        type:true,
+        type:String,
         enum:['Male','Female','Other'],
         required:true
     },
@@ -54,7 +54,7 @@ const employeSchema = new mongoose.Schema({
 
 })
 
-User.pre('remove',async function (next) {
+User.schema.pre('remove',async function (next) {
     try {
         await Emp.deleteMany({employeeId: this._id});
         next()
