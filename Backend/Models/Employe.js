@@ -63,6 +63,6 @@ User.schema.pre('remove',async function (next) {
     }
 })
 
-const Emp = mongoose.model('t_Employe',employeSchema);
+const Emp = mongoose.model('t_employes',employeSchema);
 
 module.exports = Emp;
