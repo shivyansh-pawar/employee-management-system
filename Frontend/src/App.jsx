@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import SignUpForm from "./pages/SignUp";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import {SnackbarProvider} from "notistack";
+
+// Pages Components
+import SignIn from "./pages/SignIn";
+import Dashboard from "./pages/Dashboard";
+import Leave from "./components/Leave";
+import Profile from "./components/Profile";
+import CreateEmployee from "./components/CreateEmployee";
+import Employee from "./components/Employees";
+// import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+
+  return ( 
+<>
+  {/* Snackbar for Notification */}
+  <SnackbarProvider
+  anchorOrigin={{ vertical:"top", horizontal:"right"}}
+  autoHideDuration={3000}
+  />
+
+   <Router>
+    <Routes>
+      <Route path="/" element={<SignIn/>}/>
+      <Route path="/signup" element={<SignIn />} />
+      <Route path="/getEmployeeData" element={<Dashboard/>}/>
+      <Route path="employees" element={<Employee />} />
+      <Route path="leave" element={<Leave />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="createEmployee" element={<CreateEmployee />} />
+
+      </Routes>
+   </Router>
+   </>
   )
 }
 
