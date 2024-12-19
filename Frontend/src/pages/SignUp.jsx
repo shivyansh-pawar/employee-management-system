@@ -3,7 +3,7 @@ import axios from "axios";
 import { APIURL } from "../utils/api";
 import { enqueueSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
-import card from "../assets/images/card3.svg";
+import card from "../assets/images/sign2.png";
 import Logo from "../assets/images/logo.avif";
 
 const SignUpForm = () => {

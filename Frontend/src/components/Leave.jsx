@@ -40,7 +40,7 @@ const AttendanceLeavePage = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gradient-to-r from-blue-100 to-purple-50 min-h-screen">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Attendance & Leave Management

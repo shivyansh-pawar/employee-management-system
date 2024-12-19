@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { APIURL } from "../utils/api";
-// import Img from "../assets/images/emp.svg";
+import Img from "../assets/images/emp1.svg";
 import { enqueueSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 
@@ -128,13 +128,13 @@ const FormComponent = ({ setCreate, fetchData }) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-50">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
         <div className="text-center">
           <img
-            // src={Img}
+            src={Img}
             alt="Create Employee"
-            className="w-24 h-24 rounded-full mx-auto"
+            className="w-24 h-24  mx-auto "
           />
           <button
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"

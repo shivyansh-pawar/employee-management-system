@@ -10,7 +10,6 @@ import {
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
-
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ toggleSidebar }) => {
@@ -18,7 +17,7 @@ const Sidebar = ({ toggleSidebar }) => {
   const navigate = useNavigate();
 
   const user = localStorage.getItem("email");
-  const first_name = user?.split("@")[0].toLocaleUpperCase() || "User";
+  const first_name = user?.split("@")[0].toUpperCase() || "User";
 
   const logoutHandle = () => {
     enqueueSnackbar("Logout Successful 🎉", { variant: "success" });
@@ -28,7 +27,9 @@ const Sidebar = ({ toggleSidebar }) => {
   return (
     <div
       className={`flex flex-col bg-gray-100 text-gray-700 h-screen p-3 ${
-        expanded ? "w-60 transition-width duration-300" : "w-20 transition-width duration-500"
+        expanded
+          ? "w-60 transition-width duration-300"
+          : "w-20 transition-width duration-500"
       }`}
     >
       {/* User Profile Section */}
@@ -48,23 +49,23 @@ const Sidebar = ({ toggleSidebar }) => {
       {/* Main Navigation */}
       <Nav className="flex flex-col">
         <Nav.Link
-          onClick={() => navigate("/getEmployeeData/employees")}
+          onClick={() => navigate("/dashboard/employees")}
           className="flex items-center text-gray-700 py-2 hover:bg-gray-200 rounded-md px-3"
         >
           <FaUsers className="text-xl mr-2" />
-          {expanded && <span className="text-base">Dashboard</span>}
+          {expanded && <span className="text-base">Employees</span>}
         </Nav.Link>
 
         <Nav.Link
-          onClick={() => navigate("/getEmployeeData/leave")}
+          onClick={() => navigate("/dashboard/leave")}
           className="flex items-center text-gray-700 py-2 hover:bg-gray-200 rounded-md px-3"
         >
           <FaClipboardList className="text-xl mr-2" />
-          {expanded && <span className="text-base">Attendance</span>}
+          {expanded && <span className="text-base">Leave</span>}
         </Nav.Link>
 
         <Nav.Link
-          onClick={() => navigate("/getEmployeeData/profile")}
+          onClick={() => navigate("/dashboard/profile")}
           className="flex items-center text-gray-700 py-2 hover:bg-gray-200 rounded-md px-3"
         >
           <FaUser className="text-xl mr-2" />
@@ -72,7 +73,7 @@ const Sidebar = ({ toggleSidebar }) => {
         </Nav.Link>
 
         <Nav.Link
-          onClick={() => navigate("/getEmployeeData/schedules")}
+          onClick={() => navigate("/dashboard/schedules")}
           className="flex items-center text-gray-700 py-2 hover:bg-gray-200 rounded-md px-3"
         >
           <FaCalendarAlt className="text-xl mr-2" />
@@ -85,7 +86,7 @@ const Sidebar = ({ toggleSidebar }) => {
       {/* Settings and Logout */}
       <Nav className="mt-auto flex flex-col">
         <Nav.Link
-          onClick={() => navigate("/getEmployeeData/settings")}
+          onClick={() => navigate("/dashboard/settings")}
           className="flex items-center text-gray-700 py-2 hover:bg-gray-200 rounded-md px-3"
         >
           <FaCog className="text-xl mr-2" />
@@ -97,7 +98,7 @@ const Sidebar = ({ toggleSidebar }) => {
           onClick={logoutHandle}
         >
           <FaSignOutAlt className="text-xl mr-2" />
-          {expanded && <span className="text-base">Logout Account</span>}
+          {expanded && <span className="text-base">Logout</span>}
         </Nav.Link>
       </Nav>
 
@@ -107,7 +108,6 @@ const Sidebar = ({ toggleSidebar }) => {
           className="bg-blue-500 text-white py-1 px-3 rounded-md hover:bg-blue-700"
           onClick={() => {
             setExpanded(!expanded);
-            toggleSidebar();
           }}
         >
           {expanded ? "<" : ">"}
@@ -118,3 +118,4 @@ const Sidebar = ({ toggleSidebar }) => {
 };
 
 export default Sidebar;
+

@@ -1,4 +1,4 @@
-import React,{useEffect,useState,UseState} from "react";
+import React,{useEffect,useState} from "react";
 import { FaCamera } from "react-icons/fa";
 import { enqueueSnackbar } from "notistack";
 import axios from "axios";
@@ -10,7 +10,8 @@ const EmployerProfilePage=()=>{
     const[editUser,setEditUser]=useState({});
     const[isEditing,setIsEditing]=useState(false);
     const[error,setError]=useState("");
-    const[profilePhoto,setProfilePhoto]=useState("url");
+    const[profilePhoto,setProfilePhoto]=
+    useState(    "https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small_2x/user-profile-icon-free-vector.jpg");
     const token=localStorage.getItem("token");
     const navigate=useNavigate();
     const fetchUser=async()=>{
@@ -27,7 +28,7 @@ const EmployerProfilePage=()=>{
             if(
                 error.response &&
                 error.response.data &&
-                error.responsse.data.error ==="Token expired"
+                error.response.data.error ==="Token expired"
             ){navigate("/");
 
             }else{
@@ -78,9 +79,9 @@ const EmployerProfilePage=()=>{
       };
     
       return (
-        <div className="min-h-screen flex justify-center items-center py-8 bg-gray-100">
+        <div className="min-h-screen flex justify-center items-center py-8 bg-gradient-to-r from-blue-100 to-purple-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full sm:w-96">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-center">
               <div className="relative">
                 <img
                   src={profilePhoto} // Updated to use profilePhoto state
@@ -100,11 +101,12 @@ const EmployerProfilePage=()=>{
                   </label>
                 )}
               </div>
-              <div className="ml-4">
+              </div>
+
+              <div className="flex items-center justify-center ">
                 <h2 className="text-xl font-semibold text-gray-800">{user?.user?.username}</h2>
                 <p className="text-gray-600">HR Manager</p>
               </div>
-            </div>
     
             {isEditing ? (
               <form className="mt-6" onSubmit={handleEditSubmit}>

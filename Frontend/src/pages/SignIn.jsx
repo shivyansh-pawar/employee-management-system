@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 import Logo from "../assets/images/login.jpg";
-import card from "../assets/images/card4.svg";
+import card from "../assets/images/sign.png";
 
 
 const SignIn = () => {
