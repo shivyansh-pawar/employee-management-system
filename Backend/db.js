@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-const MONGO_URI = "mongodb://localhost:27017/newdata";
+require('dotenv').config(); 
 
-mongoose.connect(MONGO_URI,{
+const MONGO_URL = process.env.MONGO_URL;
+
+mongoose.connect(MONGO_URL,{
     useNewUrlParser: true,
     useUnifiedTopology:true,
 })
