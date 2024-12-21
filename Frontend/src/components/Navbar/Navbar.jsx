@@ -12,7 +12,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Sidebar = ({ toggleSidebar }) => {
@@ -56,29 +56,29 @@ const Sidebar = ({ toggleSidebar }) => {
 
         {/* Main Navigation */}
         <Nav className="flex-column">
-          <Nav.Link
-            href="/getEmployeeData/employees"
+          <Link
+            to="/getEmployeeData/employees"
             className="d-flex align-items-center text-dark py-2 nav-link"
           >
             <FaUsers className="sidebar-icon" />
             {expanded && <span className="sidebar-text">Dashboard</span>}
-          </Nav.Link>
+          </Link>
 
-          <Nav.Link
-            href="/getEmployeeData/leave"
+          <Link
+            to="/getEmployeeData/leave"
             className="d-flex align-items-center text-dark py-2 nav-link"
           >
             <FaClipboardList className="sidebar-icon" />
             {expanded && <span className="sidebar-text">Attendance</span>}
-          </Nav.Link>
+          </Link>
 
-          <Nav.Link
-            href="/getEmployeeData/profile"
+          <Link
+            to="/getEmployeeData/profile"
             className="d-flex align-items-center text-dark py-2 nav-link"
           >
             <FaUser className="sidebar-icon" />
             {expanded && <span className="sidebar-text">Profile</span>}
-          </Nav.Link>
+          </Link>
 
           <Nav.Link
             href="#schedules"
@@ -93,13 +93,13 @@ const Sidebar = ({ toggleSidebar }) => {
 
         {/* Settings and Logout */}
         <Nav className="mt-auto">
-          <Nav.Link
-            href="#settings"
+          <Link
+            to="settings"
             className="d-flex align-items-center text-dark py-2 nav-link"
           >
             <FaCog className="sidebar-icon" />
             {expanded && <span className="sidebar-text">Settings</span>}
-          </Nav.Link>
+          </Link>
 
           <Nav.Link
             className="d-flex align-items-center text-danger py-2 nav-link"
@@ -131,18 +131,18 @@ const NavBarMobile = ({ logoutHandle }) => {
   return (
     <div className="navbar-mobile">
       <Nav className="justify-content-around">
-        <Nav.Link href="/getEmployeeData/employees">
+        <Link to="/getEmployeeData/employees">
           <FaUsers className="mobile-icon" />
-        </Nav.Link>
-        <Nav.Link href="/getEmployeeData/leave">
+        </Link>
+        <Link to="/getEmployeeData/leave">
           <FaClipboardList className="mobile-icon" />
-        </Nav.Link>
-        <Nav.Link href="#schedules">
+        </Link>
+        <Link to="schedules">
           <FaCalendarAlt className="mobile-icon" />
-        </Nav.Link>
-        <Nav.Link href="/getEmployeeData/profile">
+        </Link>
+        <Link to="/getEmployeeData/profile">
           <Image src={data2} alt="User" width={40} />
-        </Nav.Link>
+        </Link>
         <Nav.Link onClick={logoutHandle} className="text-danger">
           <FaSignOutAlt className="mobile-icon" />
         </Nav.Link>
