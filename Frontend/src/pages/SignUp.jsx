@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { APIURL } from "../utils/api";
 import { enqueueSnackbar } from "notistack";
-import { Link, useNavigate } from "react-router-dom";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useNavigate } from "react-router-dom";
+import card from "../assets/images/card3.svg";
+import Logo from "../assets/images/logo.avif";
 
-
-
-const SignUp = () => {
+const SignUpForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
