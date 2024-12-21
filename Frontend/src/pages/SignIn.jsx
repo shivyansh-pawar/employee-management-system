@@ -1,9 +1,11 @@
 import React,{useState} from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {APIURL} from '../utils/api'
 import { enqueueSnackbar } from 'notistack';
 import Logo from "../assets/images/login.jpg";
 import card from "../assets/images/card4.svg";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 const SignIn = () => {
