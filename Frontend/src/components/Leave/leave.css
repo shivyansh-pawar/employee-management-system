@@ -1,0 +1,225 @@
+/* General Layout */
+.attendance-leave-container {
+    padding: 2rem;
+    background-color: #f0f4f8;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dfe3e6;
+  }
+  
+  .header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2f3542;
+    text-transform: capitalize;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-select select {
+    appearance: none;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid #ced6e0;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 1rem;
+    color: #2f3542;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .custom-select select:focus {
+    border-color: #1e90ff;
+  }
+  
+  .dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1.2rem;
+    color: #57606f;
+  }
+  
+  .content-container {
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Table Layout */
+  .table-wrapper {
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .custom-table th {
+    background-color: #2f3542;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
+  
+  .custom-table tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-table tr:hover {
+    background-color: #f1f2f6;
+  }
+  
+  .custom-table td {
+    border-bottom: 1px solid #dfe4ea;
+  }
+  
+  .custom-table tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  
+  /* Status Labels */
+  .status {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .status.present {
+    background-color: #2ed573;
+    color: white;
+  }
+  
+  .status.absent {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  .status.approved {
+    background-color: #1e90ff;
+    color: white;
+  }
+  
+  .status.pending {
+    background-color: #ffa502;
+    color: white;
+  }
+  
+  .status.rejected {
+    background-color: #ff4757;
+    color: white;
+  }
+  
+  /* Buttons */
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .approve-btn,
+  .reject-btn {
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .approve-btn {
+    background-color: #2ed573;
+    box-shadow: 0 4px 10px rgba(46, 213, 115, 0.3);
+  }
+  
+  .approve-btn:hover {
+    background-color: #28a745;
+  }
+  
+  .reject-btn {
+    background-color: #ff4757;
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+  }
+  
+  .reject-btn:hover {
+    background-color: #e84118;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .custom-table th,
+    .custom-table td {
+      font-size: 0.9rem;
+    }
+  
+    .custom-select select {
+      padding: 0.6rem 2rem 0.6rem 0.9rem;
+    }
+  
+    .actions {
+      gap: 0.4rem;
+    }
+  
+    .approve-btn,
+    .reject-btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .content-container {
+      margin-top: 1rem;
+    }
+  
+    .custom-table th,
+    .custom-table td {
+      padding: 0.7rem;
+    }
+  
+    .custom-table {
+      font-size: 0.85rem;
+    }
+  }
+  

@@ -1,17 +1,20 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/Navbar";
+import Sidebar from "../../components/Navbar/Navbar";
+import './Dashboard.css'
+import './Dashboard2.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="dashboard-container">
       {/* Sidebar */}
-      <div className="w-[250px] md:w-[200px]">
+      <div className="sidebar-style">
         <Sidebar />
       </div>
 
       {/* Dashboard Content */}
-      <div className="flex-grow overflow-y-auto p-4 md:p-10 lg:p-15">
+      <div className="dashboard-content">
         <Outlet />
       </div>
     </div>

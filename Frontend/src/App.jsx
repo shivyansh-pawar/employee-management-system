@@ -1,15 +1,16 @@
 import React from "react";
-import SignUpForm from "./pages/SignUp";
+
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import {SnackbarProvider} from "notistack";
 
 // Pages Components
 import SignIn from "./pages/SignIn";
-import Dashboard from "./pages/Dashboard";
-import Leave from "./components/Leave";
-import Profile from "./components/Profile";
-import CreateEmployee from "./components/CreateEmployee";
-import Employee from "./components/Employees";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Leave from "./components/Leave/Leave";
+import Profile from "./components/Profile/Profile";
+import CreateEmployee from "./components/CreateEmployee/Create";
+import Employee from "./components/Employee/Employees";
+import SignUp from "./pages/SignUp";
 // import './App.css'
 
 function App() {
@@ -27,12 +28,12 @@ function App() {
    <Router>
     <Routes>
       <Route path="/" element={<SignIn/>}/>
-      <Route path="/signup" element={<SignIn />} />
-      <Route path="/getEmployeeData" element={<Dashboard/>}/>
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/getEmployeeData" element={<Dashboard/>}>
       <Route path="employees" element={<Employee />} />
       <Route path="leave" element={<Leave />} />
       <Route path="profile" element={<Profile />} />
-      <Route path="createEmployee" element={<CreateEmployee />} />
+      </Route>
 
       </Routes>
    </Router>
