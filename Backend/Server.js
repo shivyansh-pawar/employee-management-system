@@ -15,9 +15,7 @@ app.use(bodyParser.json({limit:"50mb"}));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.use(route)
-app.get('/',(req,res)=>{
-    res.send('Hello world');
-})
+
 
 app.listen(PORT,()=>{
     console.log('this server is up and listing on PORT 5000')
